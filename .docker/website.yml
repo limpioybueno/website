@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: website
+  name: website
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: website
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+        - image: gcr.io/authentic-idea-278120/github.com/limpioybueno/website
+          imagePullPolicy: IfNotPresent
+          name: website-1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: website
+  name: website-hpa-4gqj
+  namespace: default
+spec:
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: website
+---
+apiVersion: v1
+kind: Service
+metadata:
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: website
+  name: website-service
+  namespace: default
+spec:
+  clusterIP: 10.12.5.79
+  externalTrafficPolicy: Cluster
+  ports:
+    - nodePort: 30424
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: website
+  sessionAffinity: None
+  type: LoadBalancer
