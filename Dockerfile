@@ -11,3 +11,6 @@ FROM nginx:latest
 COPY --from=build /app/dist/limpio-y-bueno-app /usr/share/nginx/html
 
 COPY .docker/config /etc/nginx/conf.d
+
+RUN apt update && \
+    apt install certbot python-certbot-nginx -y
