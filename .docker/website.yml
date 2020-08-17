@@ -54,6 +54,9 @@ spec:
         - image: gcr.io/authentic-idea-278120/github.com/limpioybueno/website
           imagePullPolicy: IfNotPresent
           name: website-1
+          volumeMounts:
+            - mountPath: /etc/letsencrypt
+              name: v1
       volumes:
         - name: v1
           persistentVolumeClaim:
