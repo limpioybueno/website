@@ -17,7 +17,7 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: ssl-certifies
+  name: ssl-certifies-front
   labels:
     app: nginx
 spec:
@@ -57,7 +57,7 @@ spec:
       volumes:
         - name: v1
           persistentVolumeClaim:
-            claimName: ssl-certifies
+            claimName: ssl-certifies-front
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
