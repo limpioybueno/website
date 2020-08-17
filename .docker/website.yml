@@ -24,6 +24,10 @@ spec:
         - image: gcr.io/authentic-idea-278120/github.com/limpioybueno/website
           imagePullPolicy: IfNotPresent
           name: website-1
+      volumes:
+        - name: v1
+          persistentVolumeClaim:
+            claimName: ssl-certifies
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler

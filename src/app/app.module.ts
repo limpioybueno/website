@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 // Own Components
 import { StoreComponent } from './components/store.component';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
