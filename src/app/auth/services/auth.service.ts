@@ -5,17 +5,21 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService{
-    private token: string = 'auth-token';
+    private token = 'auth-token';
     constructor(
         private http: HttpClient
     ){}
 
-    register(body:any): Observable<any>{
+    register(body: any): Observable<any>{
         return this.http.post(`${environment.API_ENDPOINT}auth/register`, body);
     }
 
-    setAuthToken(token: string): void{
-        localStorage.setItem(this.token, token);
+    login(body: any): Observable<any>{
+        return this.http.post(`${environment.API_ENDPOINT}auth/login`, body);
+    }
+
+    setAuth({access_token, user}): void{
+        localStorage.setItem(this.token, access_token);
     }
 
     get authToken(): string{

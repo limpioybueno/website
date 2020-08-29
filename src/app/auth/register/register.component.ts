@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['auth', 'login'], {
           queryParams: {
             registered: true,
-            mail: res.email
+            email: res.email
           }
         })
       },

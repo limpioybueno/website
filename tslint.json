@@ -144,7 +144,10 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "quotes": [1, "single"],
+    "semi-spacing": ["error"],
+    "block-spacing": "error"
   },
   "rulesDirectory": [
     "codelyzer"
