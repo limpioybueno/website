@@ -1,29 +1,34 @@
 <div class="text-center mt-4 mb-5">
-    <h1 class="card-title">Regístrate gratis!</h1>
+    <h1 class="card-title">Regístrate!</h1>
 </div>
-<form>
+<div class="alert alert-danger" role="alert" *ngIf="errors && errors.length">
+    <ul>
+        <li *ngFor="let error of errors">{{error}}</li>
+    </ul>
+</div>
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" required>
+            <input type="email" class="form-control" formControlName="email" id="inputEmail" required>
         </div>
         <div class="form-group col-md-6">
             <label for="inputPassword">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword" required>
+            <input type="password" class="form-control" formControlName="password" id="inputPassword" required>
         </div>
     </div>
     <div class="form-group">
         <label for="inputName">Nombre y Apellidos</label>
-        <input type="text" class="form-control" id="inputName" required>
+        <input type="text" class="form-control" formControlName="fullName" id="inputName" required>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputCC">Cedula de ciudadania</label>
-            <input type="text" class="form-control" id="inputCC" required>
+            <input type="text" class="form-control" formControlName="identification" id="inputCC" required>
         </div>
         <div class="form-group col-md-6">
             <label for="inputTel">Teléfono de contacto</label>
-            <input type="tel" class="form-control" id="inputTel" required>
+            <input type="tel" class="form-control" formControlName="telephone" id="inputTel" required>
         </div>
     </div>
     <div class="form-group mt-3">
@@ -34,7 +39,7 @@
             </label>
         </div>
     </div>
-    <button type="submit" class="btn btn-new btn-yellow fadeUp mt-3">Empezar</button>
+    <button type="submit" class="btn btn-new btn-yellow fadeUp mt-3" [disabled]="registerForm.invalid" >Empezar</button>
 </form>
 <div class="mt-4 text-center">
     <p>Ya tienes cuenta? <a routerLink="/auth/login" class="text-yellow font-weight-bold">Ingresar!</a></p>
