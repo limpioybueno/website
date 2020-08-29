@@ -1,0 +1,7 @@
+.fadeUp {
+    transition: box-shadow .45s ease,transform .25s ease;
+}
+
+.fadeUp:hover {
+    transform: translate3d(0, -2.8px, 0);
+}

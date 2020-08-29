@@ -1,0 +1,19 @@
+.btn {
+    border-radius: .6em !important;
+    letter-spacing: -.01em;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn.btn-yellow {
+    background-color: #ffc529;
+    box-shadow: 0 0.4rem 1.5rem rgba(243, 189, 39, 0.3) !important;
+}
+
+.btn-new {
+    padding: 10px 16px;
+    width: 100%;
+}
