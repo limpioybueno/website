@@ -16,7 +16,7 @@ import { StoreComponent } from './components/store.component';
     StoreComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule
   ],
