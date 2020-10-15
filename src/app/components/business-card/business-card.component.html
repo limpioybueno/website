@@ -1,0 +1,11 @@
+<div class="business-card">
+    <a [routerLink]="['/service/'+id]">
+        <img [src]="image" alt="">
+        <div class="business-info">
+                {{name.toUpperCase()}}
+            <div class="business-tags mt-2">
+                <a *ngFor="let category of categories" href="#" class="badge badge-tag">{{category.name}}</a>
+            </div>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,30 @@
+<div class="main-content">
+    <app-header-menu></app-header-menu>
+    <div class="sub-header d-flex align-items-center">
+        <div class="container-fluid d-flex align-items-center">
+            <div class="header-form">
+                <form class="form-inline">
+                    <label class="sr-only" for="serviceSearch">Que te gustaría buscar?</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="serviceSearch" placeholder="Que te gustaría buscar?"
+                            autofocus>
+                    </div>
+                </form>
+            </div>
+            <div class="header-button">
+                <a href="" class="btn btn-new btn-yellow fadeUp d-flex align-items-center justify-content-center">
+                    <i class="ni ni-shop mr-1"></i>
+                    Registra tú negocio
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="wrap-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

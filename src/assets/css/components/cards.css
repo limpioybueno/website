@@ -16,3 +16,28 @@
     line-height: 0;
     font-weight: 500;
 }
+
+.business-card {
+    margin: 16px 8px;
+}
+
+.business-card img {
+    height: 200px;
+    width: 100%;
+    border-radius: .4em;
+}
+
+.business-card .business-info {
+    margin-top: 12px;
+}
+
+.business-card a {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #495057;
+}
+
+.business-card a:hover,
+.business-card a:focus {
+    color: #ffc529;
+}

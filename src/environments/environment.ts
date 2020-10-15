@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_ENDPOINT: 'https://api.test.limpioybueno.com/'
+  API_ENDPOINT: 'http://localhost:3000/'
 };
 
 /*

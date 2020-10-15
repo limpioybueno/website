@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Store } from '../models/store.model';
 
 @Component({
     selector: 'app-store',
@@ -7,5 +6,4 @@ import { Store } from '../models/store.model';
 })
 
 export class StoreComponent {
-    @Input() store: Store;
 }

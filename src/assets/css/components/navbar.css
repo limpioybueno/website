@@ -1,4 +1,4 @@
-.main-content header .navbar-top {
+ header .navbar-top {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -7,8 +7,59 @@
     background-color: transparent;
 }
 
-.main-content header .navbar {
+header .navbar {
     padding: 1rem;
+}
+
+header .navbar.navbar-dark button.navbar-toggler {
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+header .navbar.navbar-dark button.navbar-toggler > i {
+    color: #fff;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    header .navbar ul.navbar-nav li button {
+        color: #fff;
+    }
+
+    header .navbar ul.navbar-nav li a {
+        margin: 4px 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    header .navbar.active {
+        background-color: #fff;
+        box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.16);
+    }
+
+    header .navbar.active a.navbar-brand {
+        color: #495057;
+        padding-bottom: 10px;
+    }
+
+    header .navbar.active ul.navbar-nav li a {
+        color: #495057 !important;
+        text-align: left;
+        padding: 12px 16px;
+    }
+
+    header .navbar.active ul.navbar-nav li button {
+        width: 100%;
+    }
+
+    header .navbar.navbar-dark.active button.navbar-toggler {
+        margin-top: -7.5px;
+    }
+
+    header .navbar.navbar-dark.active button.navbar-toggler > i {
+        color: #495057;
+    }
 }
 
 @media (min-width: 768px) {
@@ -16,6 +67,37 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
     }
+}
+
+header .nav-profile button,
+header .nav-profile button:hover,
+header .nav-profile button:focus {
+    border: none;
+    box-shadow: none;
+    color: inherit;
+}
+
+header .nav-profile .profile-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.16);
+}
+
+header .nav-profile .dropdown-menu {
+    width: 100%;
+    border-color: #edf2f9;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #edf2f9;
+    border-radius: .6rem;
+}
+
+header .nav-profile .dropdown-menu a {
+    color: #495057;
+    font-weight: 300;
 }
 
 .sub-header {
