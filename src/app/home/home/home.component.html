@@ -1,9 +1,7 @@
 <div class="content">
     <app-business-card 
-        *ngFor="let service of services"
-        [id]="service.id"
-        [name]="service.name" 
-        [image]="service.image?.url"
-        [categories]="service.categories">
+        *ngFor="let company of companies"
+        [company]="company"
+    >
     </app-business-card>
 </div>

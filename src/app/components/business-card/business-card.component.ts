@@ -7,10 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class BusinessCardComponent {
-    @Input() id: string;
-    @Input() name: string;
-    @Input() image: string;
-    @Input() price: number | string;
-    @Input() duration: string;
-    @Input() categories: any[];
+    @Input() company: any;
+    constructor(){
+        console.log(this.company);
+    }
 }

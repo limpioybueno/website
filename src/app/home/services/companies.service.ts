@@ -4,13 +4,13 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class ServicesService {
+export class CompaniesService {
     constructor(
         private http: HttpClient
     ) { }
 
-    getServices(params?: any): Observable<any> {
-        return this.http.get(`${environment.API_ENDPOINT}services`, {
+    getCompanies(params?: any): Observable<any> {
+        return this.http.get(`${environment.API_ENDPOINT}companies`, {
             params: {
                 limit: '10'
             }

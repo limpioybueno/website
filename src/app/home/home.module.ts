@@ -6,6 +6,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { HeaderMenuComponent } from '../components/header-menu/header-menu.component';
 import { BusinessCardComponent } from '../components/business-card/business-card.component';
 import { ServicesService } from './services/services.service';
+import { CompaniesService } from './services/companies.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ServicesService } from './services/services.service';
     CommonModule
   ],
   providers: [
-    ServicesService
+    ServicesService,
+    CompaniesService
   ]
 })
 export class HomeModule { }
