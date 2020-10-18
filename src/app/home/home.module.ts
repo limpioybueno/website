@@ -7,13 +7,16 @@ import { HeaderMenuComponent } from '../components/header-menu/header-menu.compo
 import { BusinessCardComponent } from '../components/business-card/business-card.component';
 import { ServicesService } from './services/services.service';
 import { CompaniesService } from './services/companies.service';
+import { StoreService } from './services/store.service';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     MainLayoutComponent,
     HeaderMenuComponent,
-    BusinessCardComponent
+    BusinessCardComponent,
+    StoreComponent
   ],
   imports: [
     HomeRoutingModule,
@@ -21,7 +24,8 @@ import { CompaniesService } from './services/companies.service';
   ],
   providers: [
     ServicesService,
-    CompaniesService
+    CompaniesService,
+    StoreService
   ]
 })
 export class HomeModule { }
