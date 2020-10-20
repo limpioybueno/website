@@ -1,11 +1,16 @@
-<div class="business-card">
-    <a [routerLink]="['tienda', company.id]">
-        <img [src]="company.photo || '/assets/images/default_store.png'" alt="">
-        <div class="business-info">
-                {{company.name.toUpperCase()}}
-            <div class="business-tags mt-2">
-                <a *ngFor="let category of company.categories" href="#" class="badge badge-tag">{{category.name}}</a>
-            </div>
+<nb-card>
+    <nb-card-body>
+        <div class="business-card">
+            <a [routerLink]="['tienda', company.id]">
+                <img [src]="company.photo || '/assets/images/default_store.png'" alt="">
+                <div class="business-info">
+                    {{company.name.toUpperCase()}}
+                    <div class="business-tags mt-2">
+                        <a *ngFor="let category of company.categories" href="#"
+                            class="badge badge-tag">{{category.name}}</a>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
-</div>
+    </nb-card-body>
+</nb-card>

@@ -7,8 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AuthService} from './services/auth.service'
+import {AuthService} from './services/auth.service';
 import { AuthInterceptorProvider } from '../interceptors/auth.interceptor';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [LoginComponent, AuthComponent, RegisterComponent],
